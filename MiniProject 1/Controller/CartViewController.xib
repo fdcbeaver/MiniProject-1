@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModule="MiniProject_1" customModuleProvider="target">
+            <connections>
+                <outlet property="summaryBar" destination="ct-bar-01" id="ct-o-01"/>
+                <outlet property="itemCountLabel" destination="ct-count-01" id="ct-o-02"/>
+                <outlet property="tableView" destination="ct-table-01" id="ct-o-03"/>
+                <outlet property="totalLabel" destination="ct-total-01" id="ct-o-04"/>
+                <outlet property="view" destination="ct-root-01" id="ct-o-05"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ct-root-01">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="112" sectionHeaderHeight="0.0" sectionFooterHeight="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="ct-table-01">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="768"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ct-o-06"/>
+                        <outlet property="delegate" destination="-1" id="ct-o-07"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ct-bar-01">
+                    <rect key="frame" x="0.0" y="768" width="393" height="84"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 items" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ct-count-01">
+                            <rect key="frame" x="20" y="16" width="60" height="18"/>
+                            <fontDescription key="fontDescription" style="UIFontTextStyleSubheadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ct-total-01">
+                            <rect key="frame" x="303" y="10" width="70" height="29"/>
+                            <fontDescription key="fontDescription" style="UIFontTextStyleTitle2"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ct-count-01" firstAttribute="leading" secondItem="ct-bar-01" secondAttribute="leading" constant="20" id="ct-c-01"/>
+                        <constraint firstItem="ct-count-01" firstAttribute="centerY" secondItem="ct-total-01" secondAttribute="centerY" id="ct-c-02"/>
+                        <constraint firstItem="ct-total-01" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ct-count-01" secondAttribute="trailing" constant="12" id="ct-c-03"/>
+                        <constraint firstItem="ct-bar-01" firstAttribute="trailing" secondItem="ct-total-01" secondAttribute="trailing" constant="20" id="ct-c-04"/>
+                        <constraint firstItem="ct-total-01" firstAttribute="top" secondItem="ct-bar-01" secondAttribute="top" constant="12" id="ct-c-05"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ct-safe-01"/>
+            <constraints>
+                <constraint firstItem="ct-table-01" firstAttribute="top" secondItem="ct-root-01" secondAttribute="top" id="ct-c-06"/>
+                <constraint firstItem="ct-table-01" firstAttribute="leading" secondItem="ct-root-01" secondAttribute="leading" id="ct-c-07"/>
+                <constraint firstItem="ct-root-01" firstAttribute="trailing" secondItem="ct-table-01" secondAttribute="trailing" id="ct-c-08"/>
+                <constraint firstItem="ct-bar-01" firstAttribute="top" secondItem="ct-table-01" secondAttribute="bottom" id="ct-c-09"/>
+                <constraint firstItem="ct-bar-01" firstAttribute="leading" secondItem="ct-root-01" secondAttribute="leading" id="ct-c-10"/>
+                <constraint firstItem="ct-root-01" firstAttribute="trailing" secondItem="ct-bar-01" secondAttribute="trailing" id="ct-c-11"/>
+                <constraint firstItem="ct-root-01" firstAttribute="bottom" secondItem="ct-bar-01" secondAttribute="bottom" id="ct-c-12"/>
+                <constraint firstItem="ct-safe-01" firstAttribute="bottom" secondItem="ct-total-01" secondAttribute="bottom" constant="12" id="ct-c-13"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="130"/>
+        </view>
+    </objects>
+</document>
